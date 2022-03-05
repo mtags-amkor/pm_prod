@@ -1,0 +1,16 @@
+version: "3"
+services:
+  processmaker:
+    build: .
+    container_name: processmaker_dev_mssql
+    #image: amkormtags001/pm_dev:latest
+    image: processmaker_dev_mssql
+    #network_mode: "host"
+    ports:
+      - "80:80"
+      - "443:443"  
+    volumes:
+      - pm_data:/opt/processmaker
+    
+volumes:
+  pm_data:
